@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+::-webkit-scrollbar {
+    width: .75em;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #476072;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #334257;
+}
+
+.grab {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid; */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+div.jumbotron {
+    background-image: url('/assets/svg/wave.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+header {
+    color: white;
+    padding: 1px 36px;
+    text-align: right;
+    transform: rotateY(180deg);
+}
+
+div#book {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    /* box-shadow: 0 0 5px 5px #A2DBFA; */
+    box-shadow: 0 0 5px 5px #476072;
+    margin: 0 auto;
+    overflow: hidden;
+    transform: rotateY(180deg);
+}
+
+.material-icons.custom {
+    font-size: 60px;
+    color: #476072;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.material-icons.custom:hover {
+    font-size: 64px;
+}
+
+.center {
+    text-align: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    /* flex-basis: 100%; */
+    /* text-align: center; */
+    margin-top: 15px;
+}
