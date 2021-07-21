@@ -37,7 +37,9 @@ body {
 }
 
 div.jumbotron {
-    background-image: url('/assets/svg/wave.svg');
+    /* For GitHub Pages */
+    background-image: url('https://matthewdesailly.github.io/assets/svg/wave.svg');
+    /* background-image: url('/assets/svg/wave.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 550px;
