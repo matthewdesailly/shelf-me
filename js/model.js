@@ -59,6 +59,7 @@ function animate() {
 function render() {
     // Book Rotation
     if (modelBook) {
+        modelBook.rotation.x += Math.PI * .0005;
         modelBook.rotation.y += Math.PI * .0005;
     }
 
