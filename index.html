@@ -8,20 +8,18 @@
     <link rel="icon" href="assets/image/logo.png?v=2" type="image/x-icon">
     <title>shelf.me</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="jumbotron rotate">
-        <header>
+        <header class="un-select">
             <h1>shelf.me</h1>
         </header>
         <div id="book" class="grab"></div>
-        <div id="expand" class="center">
+        <div id="expand" class="center un-select">
             <a href="#content">
-                <span class="material-icons custom">
-                    expand_more
-                </span>
+                <i class="fa fa-angle-down fa-4x" aria-hidden="true"></i>
             </a>
         </div>
     </div>
@@ -30,15 +28,18 @@
         <div id="content" class="flex-column card">
             <div class="flex-row card">
                 <section class="search-option box-left">
-                    <h2>Cari Buku</h2>
                     <form id="searchBook">
-                        <label for="searchBookTitle">Judul</label>
-                        <input id="searchBookTitle" type="text">
-                        <button id="searchSubmit" type="submit">Cari</button>
+                        <div class="input">
+                            <label for="searchBookTitle">Judul Buku</label>
+                            <input id="searchBookTitle" type="text">
+                            <button id="searchSubmit" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </form>
                 </section>
 
-                <section class="add-option box-right">
+                <section class="add-option box-right un-select">
                     <button id="open-modal">
                         Tambah Buku
                     </button>
@@ -46,35 +47,53 @@
             </div>
 
             <div class="flex-row card">
-                <section class="book-shelf box-left">
-                    <h2>Belum selesai dibaca</h2>
+                <section class="book-shelf box-left flex-column">
+                    <h2>Belum Selesai Dibaca</h2>
 
                     <div id="incompleteBookshelfList" class="book-list">
-                        <article class="book_item">
-                            <h3>Book Title</h3>
-                            <p>Penulis: John Doe</p>
-                            <p>Tahun: 2002</p>
+                        <article class="book-item card flex-row">
+                            <div class="box-left">
+                                <div class="detail">
+                                    <h3>Book Title</h3>
+                                    <p>Penulis: John Doe</p>
+                                    <p>Tahun: 2002</p>
+                                </div>
 
-                            <div class="action">
-                                <button class="green">Selesai dibaca</button>
-                                <button class="red">Hapus buku</button>
+                                <div class="action un-select">
+                                    <button id="inCompleteButton">Selesai dibaca</button>
+                                </div>
+                            </div>
+
+                            <div class="action box-right">
+                                <button id="deleteInCompleteButton">
+                                    <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </article>
                     </div>
                 </section>
 
-                <section class="book-shelf box-right">
-                    <h2>Selesai dibaca</h2>
+                <section class="book-shelf box-right flex-column">
+                    <h2>Selesai Dibaca</h2>
 
                     <div id="completeBookshelfList" class="book-list">
-                        <article class="book_item">
-                            <h3>Book Title</h3>
-                            <p>Penulis: John Doe</p>
-                            <p>Tahun: 2002</p>
+                        <article class="book-item card flex-row">
+                            <div class="box-left">
+                                <div class="detail">
+                                    <h3>Book Title</h3>
+                                    <p>Penulis: John Doe</p>
+                                    <p>Tahun: 2002</p>
+                                </div>
 
-                            <div class="action">
-                                <button class="green">Belum selesai di Baca</button>
-                                <button class="red">Hapus buku</button>
+                                <div class="action un-select">
+                                    <button id="completeButton">Belum selesai dibaca</button>
+                                </div>
+                            </div>
+
+                            <div class="action box-right">
+                                <button id="deleteCompleteButton">
+                                    <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </article>
                     </div>
@@ -83,6 +102,11 @@
 
             <div id="modal" class="modal-container">
                 <div class="modal-content">
+                    <div class="right">
+                        <button id="close-modal">
+                            <i class="fa fa-times-circle fa-3x" aria-hidden="true"></i>
+                        </button>
+                    </div>
                     <section class="input-section">
                         <h2>Masukkan Buku Baru</h2>
                         <form id="inputBook">
@@ -102,13 +126,11 @@
                                 <label for="inputBookIsComplete">Selesai dibaca</label>
                                 <input id="inputBookIsComplete" type="checkbox">
                             </div>
-                            <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai
-                                    dibaca</span></button>
+                            <button id="bookSubmit" class="un-select" type="submit">Masukkan Buku ke rak
+                                <span class="checkedText">Belum Selesai Dibaca</span>
+                            </button>
                         </form>
                     </section>
-                    <button id="close-modal">
-                        Tutup
-                    </button>
                 </div>
             </div>
         </div>
@@ -121,6 +143,7 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.130.1/examples/js/controls/TrackballControls.js"></script>
     <script src="js/model.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/dom.js"></script>
     <script src="js/main.js"></script>
 </body>
 

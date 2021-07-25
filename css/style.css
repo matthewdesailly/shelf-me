@@ -16,11 +16,6 @@
     background: #334257;
 }
 
-.grab {
-    cursor: -webkit-grab;
-    cursor: grab;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -39,6 +34,19 @@ body {
     overflow: hidden;
 }
 
+.grab {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.un-select {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
 div.jumbotron {
     background-image: url('../assets/svg/wave.svg');
     background-repeat: no-repeat;
@@ -55,12 +63,6 @@ header {
     padding: 1px 36px;
     text-align: right;
     transform: rotateY(180deg);
-
-    user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
 }
 
 div#book {
@@ -73,25 +75,21 @@ div#book {
     transform: rotateY(180deg);
 }
 
-.material-icons.custom {
-    font-size: 60px;
+div#expand i {
     color: #476072;
     margin-top: 24px;
-    cursor: pointer;
-
-    user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
 }
 
-.material-icons.custom:hover {
-    font-size: 64px;
+div#expand i:hover {
+    font-size: 4.5em;
 }
 
 .center {
     text-align: center;
+}
+
+.right {
+    text-align: right;
 }
 
 main {
@@ -106,37 +104,14 @@ main {
 }
 
 .flex-column {
-    border: 1px solid;
     display: flex;
     flex-direction: column;
 }
 
 .flex-row {
-    border: 1px solid;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-.box {
-    flex-basis: 100%;
-    margin-top: 15px;
-}
-
-.search-option.box-left {
-    flex-basis: 90%;
-}
-
-.add-option.box-right {
-    flex-basis: 10%;
-}
-
-.book-shelf.box-left {
-    flex-basis: 50%;
-}
-
-.book-shelf.box-right {
-    flex-basis: 50%;
 }
 
 .card {
@@ -148,20 +123,81 @@ main {
 
 h2,
 h3,
-label {
+label,
+p {
     color: #334257;
 }
+
+button {
+    border: none;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* SEARCH OPTION */
+
+.search-option.box-left {
+    flex-basis: 90%;
+}
+
+.search-option>form>.input {
+    margin: 12px;
+}
+
+.search-option>form>.input>input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #334257;
+    border-radius: 5px;
+}
+
+.search-option>form>.input>label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search-option>form>.input>button {
+    background-color: #476072;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* END OF SEARCH OPTION */
+
+/* ADD OPTION */
+
+.add-option.box-right {
+    flex-basis: 10%;
+    margin: auto;
+}
+
+.add-option.box-right>button {
+    background-color: #476072;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* END OF ADD OPTION */
+
+/* MODAL */
 
 .modal-container {
     pointer-events: none;
     background-color: rgba(0, 0, 0, .3);
     opacity: 0;
     display: flex;
+    top: 0;
+    left: 0;
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 0;
-    left: 0;
     height: 100vh;
     width: 100vw;
 }
@@ -175,22 +211,21 @@ label {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     background-color: white;
     border-radius: 5px;
-    padding: 20px;
-    width: 500px;
-    height: 400px;
+    padding: 20px 40px;
+    width: 600px;
+    height: 450px;
     max-width: 100%;
 }
 
-.search-option>form>.input {
-    margin: 10px 0;
+button#close-modal {
+    background-color: white;
+    color: #476072;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.search-option>form>.input>input {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-}
+/* END OF MODAL */
 
 /* INPUT SECTION */
 
@@ -229,4 +264,59 @@ label {
     margin-right: 10px;
 }
 
+button#bookSubmit {
+    background-color: #476072;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
 /* END OF INPUT SECTION */
+
+/* BOOK SHELF */
+
+.book-shelf.box-left {
+    flex-basis: 50%;
+}
+
+.book-shelf.box-right {
+    flex-basis: 50%;
+}
+
+.book-shelf {
+    padding: 20px;
+}
+
+.book-shelf>h2 {
+    text-align: center;
+}
+
+.book-item>.box-left {
+    flex-basis: 90%;
+}
+
+.book-item>.box-right {
+    flex-basis: 10%;
+}
+
+#inCompleteButton,
+#completeButton {
+    background-color: #476072;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#deleteInCompleteButton,
+#deleteCompleteButton {
+    background-color: #476072;
+    color: white;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+/* END OF BOOK SHELF */
