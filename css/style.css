@@ -78,6 +78,7 @@ div#book {
 div#expand i {
     color: #476072;
     margin-top: 24px;
+    cursor: pointer;
 }
 
 div#expand i:hover {
@@ -300,8 +301,8 @@ button#bookSubmit {
     flex-basis: 10%;
 }
 
-#inCompleteButton,
-#completeButton {
+.inCompleteButton,
+.completeButton {
     background-color: #476072;
     color: white;
     border-radius: 5px;
@@ -310,8 +311,7 @@ button#bookSubmit {
     cursor: pointer;
 }
 
-#deleteInCompleteButton,
-#deleteCompleteButton {
+.deleteButton {
     background-color: #476072;
     color: white;
     border-radius: 5px;
@@ -320,3 +320,45 @@ button#bookSubmit {
 }
 
 /* END OF BOOK SHELF */
+
+@media screen and (max-width: 1000px) {
+    div.jumbotron {
+        height: 600px;
+    }
+
+    div#book {
+        background-color: rgba(255, 255, 255, .5);
+        width: 350px;
+        height: 350px;
+    }
+
+    .box-left,
+    .box-right {
+        width: 100%;
+        padding: 0;
+        flex: 100%;
+    }
+
+    .search-option>form>.input>button:after {
+        content: 'Cari';
+    }
+
+    .add-option.box-right {
+        text-align: right;
+    }
+
+    .inCompleteButton,
+    .completeButton {
+        /* padding: 8px 12px; */
+        padding: 4px 8px;
+        margin-bottom: 10px;
+    }
+
+    .deleteButton:after {
+        display: flex;
+        content: " Hapus";
+        text-align: center;
+        font-size: 16px;
+        padding: 0 8px;
+    }
+}

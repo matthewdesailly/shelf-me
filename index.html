@@ -18,7 +18,7 @@
         </header>
         <div id="book" class="grab"></div>
         <div id="expand" class="center un-select">
-            <a href="#content">
+            <a>
                 <i class="fa fa-angle-down fa-4x" aria-hidden="true"></i>
             </a>
         </div>
@@ -51,51 +51,13 @@
                     <h2>Belum Selesai Dibaca</h2>
 
                     <div id="incompleteBookshelfList" class="book-list">
-                        <article class="book-item card flex-row">
-                            <div class="box-left">
-                                <div class="detail">
-                                    <h3>Book Title</h3>
-                                    <p>Penulis: John Doe</p>
-                                    <p>Tahun: 2002</p>
-                                </div>
-
-                                <div class="action un-select">
-                                    <button id="inCompleteButton">Selesai dibaca</button>
-                                </div>
-                            </div>
-
-                            <div class="action box-right">
-                                <button id="deleteInCompleteButton">
-                                    <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </article>
                     </div>
                 </section>
 
                 <section class="book-shelf box-right flex-column">
-                    <h2>Selesai Dibaca</h2>
+                    <h2>Sudah Selesai Dibaca</h2>
 
                     <div id="completeBookshelfList" class="book-list">
-                        <article class="book-item card flex-row">
-                            <div class="box-left">
-                                <div class="detail">
-                                    <h3>Book Title</h3>
-                                    <p>Penulis: John Doe</p>
-                                    <p>Tahun: 2002</p>
-                                </div>
-
-                                <div class="action un-select">
-                                    <button id="completeButton">Belum selesai dibaca</button>
-                                </div>
-                            </div>
-
-                            <div class="action box-right">
-                                <button id="deleteCompleteButton">
-                                    <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </article>
                     </div>
                 </section>
             </div>
@@ -123,7 +85,7 @@
                                 <input id="inputBookYear" type="number" required>
                             </div>
                             <div class="input-inline">
-                                <label for="inputBookIsComplete">Selesai dibaca</label>
+                                <label for="inputBookIsComplete">Sudah Selesai dibaca</label>
                                 <input id="inputBookIsComplete" type="checkbox">
                             </div>
                             <button id="bookSubmit" class="un-select" type="submit">Masukkan Buku ke rak
@@ -136,15 +98,14 @@
         </div>
     </main>
 
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.130.1/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.130.1/examples/js/controls/TrackballControls.js"></script>
     <script src="js/model.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/dom.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

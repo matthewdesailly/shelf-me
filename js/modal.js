@@ -35,6 +35,12 @@ openModal.addEventListener('click', () => {
     containerModal.classList.add('show-modal');
     body.classList.add('disable-scroll');
     disableScroll();
+
+    const listData = document.querySelectorAll('#inputBook input');
+    for (data of listData) {
+        data.value = '';
+        data.checked = false;
+    }
 });
 
 closeModal.addEventListener('click', () => {
